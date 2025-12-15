@@ -30,6 +30,34 @@
     </header>
 
     <main>
+        <section class="converter-compact">
+            <div class="container">
+                <h2>Try It Now</h2>
+                <div class="converter-form">
+                    <input type="text" id="mapsInput" placeholder="https://maps.google.com/..." class="maps-input">
+                    <button id="convertBtn" class="convert-button">Convert</button>
+                </div>
+                <div id="result" class="result-container" style="display: none;">
+                    <div class="result-success">
+                        <h3>Conversion Successful!</h3>
+                        <div class="result-item">
+                            <strong>Coordinates:</strong>
+                            <p id="coordinates"></p>
+                        </div>
+                        <div class="result-item">
+                            <strong>Waze Navigation Link:</strong>
+                            <div class="waze-links">
+                                <a id="wazeUrl" href="#" target="_blank" rel="noopener" class="waze-link">Open in Waze</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="error" class="error-container" style="display: none;">
+                    <p class="error-message"></p>
+                </div>
+            </div>
+        </section>
+
         <section class="hero">
             <div class="container">
                 <h2>Instantly convert Google Maps links to Waze navigation link with one tap!</h2>
@@ -37,7 +65,10 @@
                     Transform any Google Maps location into a Waze-ready navigation link in seconds.
                     Perfect for quick route planning and seamless navigation.
                 </p>
-                <a href="https://t.me/gMapsToWazeBot" class="hero-button" target="_blank" rel="noopener">Open Telegram Bot</a>
+                <a href="https://t.me/gMapsToWazeBot" class="hero-button" target="_blank" rel="noopener">
+                    <img src="Telegram-icon.png" alt="Telegram" class="button-icon">
+                    Open Telegram Bot
+                </a>
             </div>
         </section>
 
@@ -135,5 +166,6 @@
             </p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
