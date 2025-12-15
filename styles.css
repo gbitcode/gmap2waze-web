@@ -91,6 +91,7 @@ section h2 {
 
 /* Hero Section */
 .hero {
+    padding-top: 0;
     text-align: center;
     background-color: var(--bg-white);
 }
