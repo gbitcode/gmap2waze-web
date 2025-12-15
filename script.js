@@ -65,12 +65,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         resultContainer.style.display = 'block';
         errorContainer.style.display = 'none';
+
+        // Track conversion event in Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'link_converted_web', {
+                'event_category': 'conversion',
+                'event_label': 'web_converter'
+            });
+        }
     }
 
     function showError(message) {
         errorMessageEl.textContent = message;
         errorContainer.style.display = 'block';
         resultContainer.style.display = 'none';
+
+        // Track failed conversion event in Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'web_conversion_failed', {
+                'event_category': 'conversion',
+                'event_label': 'web_converter_error'
+            });
+        }
     }
 
     function hideMessages() {
