@@ -368,6 +368,229 @@ section h2 {
     box-shadow: var(--shadow-hover);
 }
 
+.gmaps-link {
+    background-color: var(--primary-color);
+}
+
+/* Share button (inside result card) */
+.result-share {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #c8e6c9;
+    text-align: right;
+}
+
+.share-button {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.share-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Share modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal-dialog {
+    background: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 560px;
+    padding: 28px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal-header h4 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+.modal-body {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.share-url-input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    outline: none;
+}
+
+.share-url-input:focus {
+    border-color: var(--primary-color);
+}
+
+.copy-button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.copy-button:hover {
+    background-color: #3367d6;
+    transform: translateY(-1px);
+}
+
+/* Modal share-via channel buttons */
+.modal-channels {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.channel-btn {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.channel-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+}
+
+.channel-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.channel-telegram {
+    background-color: #2CA5E0;
+}
+
+.channel-whatsapp {
+    background-color: #25D366;
+}
+
+.channel-viber {
+    background-color: #7360F2;
+}
+
+/* Route Steps */
+.route-steps {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.route-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    flex-wrap: wrap;
+}
+
+.route-step-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    min-width: 90px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.route-step-coords {
+    flex: 1;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-family: monospace;
+    min-width: 140px;
+}
+
+.route-step-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.route-full-link-wrapper {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #c8e6c9;
+}
+
 .error-container {
     background-color: #ffebee;
     border: 2px solid #f44336;
@@ -619,6 +842,25 @@ footer p {
         font-size: 1.3rem;
         margin-bottom: 15px;
     }
+
+    .route-step {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .route-step-label {
+        min-width: auto;
+    }
+
+    .route-step-coords {
+        min-width: auto;
+    }
+
+    .route-step-link {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -647,5 +889,13 @@ footer p {
     .hero-button {
         padding: 12px 30px;
         font-size: 1rem;
+    }
+
+    .modal-body {
+        flex-direction: column;
+    }
+
+    .copy-button {
+        width: 100%;
     }
 }
