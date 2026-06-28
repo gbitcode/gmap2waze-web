@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
         wazeUrlEl.href = safeHref(data.wazeUrl);
         googleMapsUrlEl.href = safeHref(data.googleMapsUrl);
 
-        resultTitleEl.textContent = 'Conversion Successful!';
+        resultTitleEl.textContent = 'Your link!';
         routeStepsEl.innerHTML = '';
         singleResultEl.style.display = 'block';
         routeResultEl.style.display = 'none';
